@@ -95,7 +95,7 @@ function LoginPage() {
                   navigate("/home");
               },1000)
               // navigate('/home');
-              toast.success("Login Sucess")
+              
 
               
             }

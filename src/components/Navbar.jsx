@@ -28,6 +28,14 @@ const useStyles = makeStyles((theme) => ({
       color: '#007BFF',
     },
 },
+  activeNavButton: {
+    backgroundColor: 'white',
+    color: '#007BFF',
+  },
+  activeNavButtonLogout: {
+    backgroundColor: 'red',
+    color: 'white',
+  },
 }));
 
 function Navbar() {
@@ -65,19 +73,20 @@ function Navbar() {
             location.pathname==="/login" || location.pathname==='/signup' ||location.pathname==='/'?
             <>
           <Link to="/" className={classes.linkButton}>
-            <Button  className={classes.navButton} color="inherit" >Login</Button>
+            <Button   className={`${classes.navButton} ${location.pathname === '/' ? classes.activeNavButton : ''}`}
+                    color="inherit"  >Login</Button>
           </Link>
           
           <Link to="/signup" className={classes.linkButton}>
-            <Button className={classes.navButton} color="inherit">Signup</Button>
+            <Button  className={`${classes.navButton} ${location.pathname === '/signup' ? classes.activeNavButton : ''}`} color="inherit">Signup</Button>
           </Link>
           </>
           :
         
             
-           <Link to="/" className={classes.linkButton}>
+           <Link to="/">
             <ToastContainer/>
-            <Button className={classes.navButton} color="inherit" onClick={handleLogout}>Logout</Button>
+            <Button className={classes.activeNavButtonLogout } color="inherit" onClick={handleLogout}>Logout</Button>
           </Link>
         }
 

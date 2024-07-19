@@ -111,7 +111,7 @@ function TaskBoard() {
         navigate("/")
          toast.error('Please Login First!!');
        
-         toast.error('Please Login First!!');
+        
         
       console.error('There was an error fetching the tasks!', error);
     });
@@ -448,9 +448,9 @@ function TaskBoard() {
                           >
 
 
-                            <CardContent>
-                              <Typography variant="body1">{task.title}</Typography>
-                              <Typography variant="body1">{task.description}</Typography>
+                            <CardContent style={{marginTop:"10px"}}>
+                              <Typography variant="h6">{task.title}</Typography>
+                              <Typography paragraph={true} variant="body1">{task.description}</Typography>
                               <Typography variant="body1">{task.date}</Typography>
                               <div className={classes.taskContent}>
                                 <Button

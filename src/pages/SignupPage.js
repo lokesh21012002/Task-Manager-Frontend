@@ -93,7 +93,7 @@ function SignupPage() {
                     navigate("/");
                 },2000);
                 
-                toast.success("Register Sucess");
+                
             }
             else{
                 toast.error("Register Failed");
