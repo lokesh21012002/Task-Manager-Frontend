@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import TaskBoard9 from '../components/TaskBoard9';
+import TaskBoard9 from '../pages/TaskBoard';
 import { useAuth } from './AuthContext'; // Adjust the import path as needed
 
 // Mock the AuthContext

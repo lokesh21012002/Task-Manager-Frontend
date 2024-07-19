@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import axios from 'axios';
 import Navbar from '../components/Navbar';
 import {
   Button, Card, CardContent, TextField, Select, MenuItem, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle
 } from '@material-ui/core';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import NavBarHome from './NavBarHome';
 import { axiosInstance } from '../config/AxiosConfig';
 import {toast,ToastContainer} from "react-toastify";
 import { Link ,useNavigate} from 'react-router-dom';
@@ -74,7 +72,7 @@ const initialData = {
   columnOrder: ['column-1', 'column-2', 'column-3'],
 };
 
-function TaskBoard9() {
+function TaskBoard() {
      const navigate=useNavigate();
   const classes = useStyles();
   const [data, setData] = useState(initialData);
@@ -508,55 +506,7 @@ function TaskBoard9() {
         </DialogActions>
       </Dialog>
 
-      {/* <Dialog open={openView} onClose={handleClose}>
-        <DialogTitle>View Task</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {selectedTask ? selectedTask.title : ''}
-          </DialogContentText>
-          <DialogContentText>
-            {selectedTask ? selectedTask.description : ''}
-          </DialogContentText>
-          <DialogContentText>
-            {selectedTask ? selectedTask.date : ''}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog> */}
-
-      {/* <Dialog open={openEdit} onClose={handleClose}>
-        <DialogTitle>Edit Task</DialogTitle>
-        <DialogContent>
-          <TextField
-            label="Content"
-            variant="outlined"
-            value={taskContent}
-            onChange={(e) => setTaskContent(e.target.value)}
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            label="Description"
-            variant="outlined"
-            value={taskDescription}
-            onChange={(e) => setTaskDescription(e.target.value)}
-            fullWidth
-            margin="normal"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleEditTask} color="primary">
-            Save
-          </Button>
-        </DialogActions>
-      </Dialog> */}
+      
 
        <Dialog open={openEdit} onClose={handleCloseEdit} classes={{ paper: classes.dialogPaper }}>
         <DialogTitle>Edit Task</DialogTitle>
@@ -637,4 +587,4 @@ function TaskBoard9() {
   );
 }
 
-export default TaskBoard9;
+export default TaskBoard;

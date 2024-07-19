@@ -75,65 +75,39 @@ function SignupPage() {
   });
 
   const handleLogin =  async (data,e) => {
-    e.preventDefault();
-
-    // console.log(data);
-    const email=data['email'];
-    const password=data['password'];
-    const name=data['firstName']+"?"+data['lastName'];
-
-
-
-    const apiData={email,password,name};
-    console.log(apiData);
-
-    // e.preventDefault();
+        e.preventDefault();
+        const email=data['email'];
+        const password=data['password'];
+        const name=data['firstName']+"?"+data['lastName'];
+        const apiData={email,password,name};
+        // console.log(apiData);
 
     
-    try{
-    
 
-    
-    // console.log(data);
-
-    const res=await axiosInstance.post("/users/register",apiData);
-//  
-    if(res.status===200){
-        toast.success("Register Sucess");
-        setTimeout(()=>{
-            navigate("/");
-        },2000);
-        // navigate('/login');
-        // toast.success("Register Sucess");
-
-       
-    }
-    else{
-        toast.error("Register Failed");
-        alert("error");
         
-    }
-    // else{
-    //     alert("Invalid cred");
-
-    // }
-    // console.log(res);
-    // }
-    // catch(e){
-    //     console.log(e);
-
-    // }
-}
-catch(e){
-    toast.error(e.response.data.email);
-    // alert(e.response.data.email);
-
-    console.log(e.response.data);
-}
-
+        try{
+            const res=await axiosInstance.post("/users/register",apiData);
+            if(res.status===200){
+                toast.success("Register Sucess");
+                setTimeout(()=>{
+                    navigate("/");
+                },2000);
+                
+                toast.success("Register Sucess");
+            }
+            else{
+                toast.error("Register Failed");
+                alert("error");
+                
+        }
     
-    // Handle login logic here
-  };
+    }
+    catch(e){
+        toast.error(e.response.data.email);
+        console.log(e.response.data);
+    }
+
+};
 
   return (
     <>

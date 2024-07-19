@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import LoginPage2 from '../pages/LoginPage2';
+import LoginPage2 from '../pages/LoginPage';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
