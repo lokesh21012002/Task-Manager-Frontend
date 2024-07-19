@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import PrivateRoute from './config/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import TaskBoard from './pages/TaskBoard';
 
 
 
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/home" element={<PrivateRoute element={<TaskBoard9 />} />} />
+          <Route path="/home" element={<PrivateRoute element={<TaskBoard />} />} />
 
         </Routes>
       </Router>

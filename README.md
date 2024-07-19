@@ -35,11 +35,11 @@ AddTaskModal: Modal to add a new task.
 Running the Application Locally
 Start the backend server
 
-cd backend
+cd task-manager-app
 npm start
 Start the frontend server
 
-cd frontend
+cd task-manager-frontend
 npm start
 Access the application
 Open your browser and navigate to http://localhost:3000.
