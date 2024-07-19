@@ -1,4 +1,68 @@
-# Frontend
+# Task Manager
+
+# Overview
+
+The Task Manager Application is a full-stack project that allows users to manage their tasks efficiently. It includes user authentication, task creation, updating, deletion, and a task board interface to visualize the tasks.
+
+# Prerequisites
+
+### Node.js (v14 or later)
+
+### npm (v6 or later)
+
+# Installation
+
+## Clone the repository
+
+### `git clone https://github.com/yourusername/task-manager-frontend.git`
+
+### `cd task-manager-frontend/`
+
+### `npm install`
+
+### `npm start`
+
+# Technologies Used
+
+### React.js
+
+### React Router
+
+### Material UI
+
+### Axios
+
+### React-beautiful-dnd
+
+# Features
+
+### User Authentication: Login and Signup
+
+### Task Board: Drag and drop functionality to manage tasks
+
+### CRUD Operations: Create, Read, Update, and Delete tasks
+
+### Search and Filter: Search tasks and filter by Recent, Oldest and Alphabetic.
+
+# Componenets
+
+### Navbar: Navigation bar with login, signup, and logout options.
+
+### TaskBoard: Main interface to manage tasks.
+
+### TaskItem: Individual task component.
+
+### LoginPage: Login form component.
+
+### SignupPage: Signup form component.
+
+### TaskDetailsModal: Modal to display task details.
+
+### AddTaskModal: Modal to add a new task.
+
+# Access the application
+
+Opne your browser and navigate to `http://localhost:3000`
 
 # Getting Started with Create React App
 
