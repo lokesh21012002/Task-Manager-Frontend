@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
     borderRadius: '8px',
     textAlign: 'center',
+    maxWidth:'400px',
+    width:'100%'
+
   },
   title: {
     marginBottom: theme.spacing(2),

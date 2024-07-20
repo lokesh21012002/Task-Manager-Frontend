@@ -6,6 +6,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {toast,ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { localeCurrency } from '@progress/kendo-intl';
+import { useAuth } from '../context/AuthContext';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    margin:'auto',
+    textAlign:"center",
   },
   linkButton: {
     textDecoration: 'none',
@@ -36,24 +40,33 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'red',
     color: 'white',
   },
+   toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between', // Ensures the button stays at the end
+    alignItems:"center",
+  },
 }));
 
 function Navbar() {
+  const { logout } = useAuth();
+
     const location=useLocation();
 
 
-    const [login,setLoggedin]=useState(true);
+    // const [login,setLoggedin]=useState(true);
   const classes = useStyles();
-  const loginCheck=()=>{
-    setLoggedin(false);
+  // const loginCheck=()=>{
+  //   setLoggedin(false);
 
 
-  }
-  const logoutCheck=()=>{
-    setLoggedin(true);
-  }
+  // }
+  // const logoutCheck=()=>{
+  //   setLoggedin(true);
+  // }
   const handleLogout=()=>{
     toast.success("Good Bye!!!");
+    logout();
+
 
     // localStorage.removeItem('token');
   }
@@ -61,12 +74,12 @@ function Navbar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            {/* Task Manager */}
+          <Typography variant="h4" className={classes.title}>
+            Task Manager
           </Typography>
           {
 

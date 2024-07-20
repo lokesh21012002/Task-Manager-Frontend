@@ -85,6 +85,8 @@ function TaskBoard() {
   const [taskDescription, setTaskDescription] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('Recent');
+  const [isContentValid, setIsContentValid] = useState(true);
+
 
   useEffect(() => {
     axiosInstance.get('/tasks', {
@@ -209,6 +211,11 @@ function TaskBoard() {
   };
   const handleSaveEdit = () => {
     console.log(taskContent,taskDescription);
+    if(taskContent.trim()==='' || taskDescription.trim()===''){
+      // toast.error("fi")
+      setIsContentValid(false);
+      return ;
+    }
     axiosInstance.put(`/tasks/${selectedTask._id}`, {
       title: taskContent,
       description: taskDescription,
@@ -260,6 +267,9 @@ function TaskBoard() {
   };
 
   const handleAddTask = () => {
+    if(taskContent.trim()===''|| taskDescription.trim()===''){
+      return ;
+    }
     const newTask = {
       title: taskContent,
       description: taskDescription,
@@ -512,6 +522,7 @@ function TaskBoard() {
         <DialogTitle>Edit Task</DialogTitle>
         <DialogContent>
           <TextField
+           required
             autoFocus
             margin="dense"
             label="Task Content"
@@ -519,14 +530,21 @@ function TaskBoard() {
             fullWidth
             value={taskContent}
             onChange={(e) => setTaskContent(e.target.value)}
+            error={!taskContent}
+          helperText={!taskContent ? 'Task content is required' : ''}
+           
           />
           <TextField
+           required
             margin="dense"
             label="Task Description"
             type="text"
             fullWidth
             value={taskDescription}
             onChange={(e) => setTaskDescription(e.target.value)}
+            error={!taskDescription}
+          helperText={!taskDescription ? 'Task descripton is required' : ''}
+           
           />
         </DialogContent>
         <DialogActions>
@@ -563,6 +581,9 @@ function TaskBoard() {
             fullWidth
             margin="normal"
             required
+            error={!taskContent}
+          helperText={!taskContent ? 'Task content is required' : ''}
+
           />
           <TextField
             label="Description"
@@ -572,6 +593,8 @@ function TaskBoard() {
             fullWidth
             margin="normal"
             required
+            error={!taskDescription}
+          helperText={!taskDescription ? 'Task descripton is required' : ''}
           />
         </DialogContent>
         <DialogActions>
