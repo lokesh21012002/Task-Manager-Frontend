@@ -14,11 +14,13 @@ The Task Manager Application is a full-stack project that allows users to manage
 
 ## Clone the repository
 
-### `git clone https://github.com/yourusername/task-manager-frontend.git`
+### `git clone https://github.com/lokesh21012002/Task-Manager-Frontend.git`
 
 ### `cd task-manager-frontend/`
 
 ### `npm install`
+
+### `npm install --force` in case their is some version issue
 
 ### `npm start`
 
